@@ -1,0 +1,21 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameField {
+  border: 1px solid;
+}
+
+canvas {
+  width: 640px;
+  height: 480px;
+}
