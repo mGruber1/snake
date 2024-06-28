@@ -1,11 +1,13 @@
 "use strict";
 
 export default class Cake {
-  constructor() {
+  constructor(gameFieldWidth, gameFieldHeight) {
     this.x = 50;
     this.y = 50;
     this.width = 10;
     this.height = 10;
+    this.gameFieldWidth = gameFieldWidth;
+    this.gameFieldHeight = gameFieldHeight;
   }
 
   draw(ctx) {
@@ -13,13 +15,13 @@ export default class Cake {
   }
 
   update() {
-    let randomNumX = Math.round(Math.random() * 640);
-    let randomNumY = Math.round(Math.random() * 480);
-    if (randomNumX >= this.x + 640) {
+    let randomNumX = Math.round(Math.random() * this.gameFieldWidth);
+    let randomNumY = Math.round(Math.random() * this.gameFieldHeight);
+    if (randomNumX >= this.x + this.gameFieldWidth) {
       this.x = this.x - this.width;
     }
     this.x = randomNumX;
-    if (randomNumY >= this.y + 480) {
+    if (randomNumY >= this.y + this.gameFieldHeight) {
       this.y = this.y - this.height;
     }
     this.y = randomNumY;

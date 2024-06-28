@@ -6,9 +6,11 @@ import Cake from "./cake.js";
 import { rectangleOverlap } from "./collisionDetection.js";
 const canvas = document.getElementById("gameField");
 var ctx = canvas.getContext("2d");
+const gameFieldWidth = ctx.canvas.width;
+const gameFieldHeight = ctx.canvas.height;
 
-const snake = new Snake();
-const cake = new Cake();
+const snake = new Snake(gameFieldWidth, gameFieldHeight);
+const cake = new Cake(gameFieldWidth, gameFieldHeight);
 const controller = new Controller(snake);
 
 const animate = () => {
