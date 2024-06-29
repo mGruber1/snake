@@ -21,6 +21,8 @@ const animate = () => {
 
   if (rectangleOverlap(snake, cake)) {
     cake.update();
+
+    snake.eat();
   }
 
   requestAnimationFrame(animate);

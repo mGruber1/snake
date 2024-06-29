@@ -14,14 +14,14 @@ export default class Snake {
   }
 
   draw(ctx) {
-    ctx.fillRect(this.x, this.y, this.width, this.height);
+    let rectangle = ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 
   update() {
     switch (this.direction) {
       case "right":
         if (this.x + this.width >= this.gameFieldWidth) {
-          this.x = 0;
+          this.x = 0 - this.width;
         }
         this.x += this.speed;
         break;
@@ -39,7 +39,7 @@ export default class Snake {
         break;
       case "down":
         if (this.y + this.height >= this.gameFieldHeight) {
-          this.y = 0;
+          this.y = 0 - this.height;
         }
         this.y += this.speed;
         break;
@@ -47,6 +47,6 @@ export default class Snake {
   }
 
   eat() {
-    this.width = this.width * this.length;
+    this.width += 20;
   }
 }
